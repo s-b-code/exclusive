@@ -11,6 +11,8 @@ export default {
   ],
   theme: {
     colors: {
+      white: "#FFFFFF",
+      black: "#000000",
       neutral: {
         0: "#FFFFFF",
         50: "#F4F4F6",
@@ -122,10 +124,14 @@ export default {
         "hover-button": "#E07575",
         "hover-button-2": "#A0BCE0",
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      keyframes: {
+        scroll_horizontal: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        "scroll-horizontal-infinite": "scroll_horizontal 12s linear infinite",
       },
     },
   },
