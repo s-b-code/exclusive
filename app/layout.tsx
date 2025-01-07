@@ -74,12 +74,9 @@ export default function RootLayout({
               </div>
             </div>
           </div>
-          <Separator
-            orientation="horizontal"
-            className="w-full  bg-secondary"
-          />
+          <Separator orientation="horizontal" className="bg-neutral-100" />
         </header>
-        <main>{children}</main>
+        <main className="w-full flex flex-col items-center">{children}</main>
       </body>
     </html>
   );
