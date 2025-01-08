@@ -1,6 +1,17 @@
 import type { Config } from "tailwindcss";
-
+import plugin from "tailwindcss/plugin";
+import type { PluginAPI } from "tailwindcss/types/config";
 import { default as TailwindCssAnimate } from "tailwindcss-animate";
+
+const customUtilities = plugin(function ({ addUtilities }: PluginAPI) {
+  const newUtilities = {
+    ".section-heading": {
+      "@apply text-2xl lg:text-4xl font-semibold tracking-wider": {},
+    },
+  };
+
+  addUtilities(newUtilities);
+});
 
 export default {
   darkMode: ["class"],
@@ -135,5 +146,5 @@ export default {
       },
     },
   },
-  plugins: [TailwindCssAnimate],
+  plugins: [TailwindCssAnimate, customUtilities],
 } satisfies Config;

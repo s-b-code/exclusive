@@ -5,6 +5,7 @@ import LanguageSelector from "./_components/language-selector";
 import Image from "next/image";
 import SearchForm from "./_components/search-form";
 import { Separator } from "@/components/ui/separator";
+import Footer from "@/components/footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -41,7 +42,7 @@ export default function RootLayout({
             <LanguageSelector />
           </div>
         </div>
-        <header className="sticky top-0  z-10 transition-transform duration-300 w-full bg-white">
+        <header className="sticky top-0  z-40 transition-transform duration-300 w-full bg-white">
           <div className="w-full flex justify-center">
             <div className="container py-6 flex justify-between items-center">
               <Image src={"/logo.svg"} height={24} width={118} alt="logo" />
@@ -77,6 +78,9 @@ export default function RootLayout({
           <Separator orientation="horizontal" className="bg-neutral-100" />
         </header>
         <main className="w-full flex flex-col items-center">{children}</main>
+        <footer className="w-full bg-button text-white flex justify-center">
+          <Footer />
+        </footer>
       </body>
     </html>
   );
