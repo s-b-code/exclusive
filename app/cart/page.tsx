@@ -1,3 +1,4 @@
+import CartSummaryList from "@/components/cart-summary-list";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -8,37 +9,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { cn } from "@/lib/utils";
 import { cartItems } from "@/static-data";
 import Image from "next/image";
 import Link from "next/link";
-
-const CartSummaryContent = ({
-  title,
-  price,
-  underline,
-}: {
-  title: string;
-  price: number;
-  underline?: boolean;
-}) => {
-  const displayPrice = price !== 0 ? price : "Free";
-
-  return (
-    <div
-      className={cn(
-        "flex justify-between py-4 w-full",
-        underline && "border-b border-neutral-300/50"
-      )}
-    >
-      <p>{title}</p>
-      <p className="flex">
-        {displayPrice !== "Free" && <span className="font-serif">₹</span>}
-        {displayPrice}
-      </p>
-    </div>
-  );
-};
 
 export default function CartPage() {
   return (
@@ -97,9 +70,12 @@ export default function CartPage() {
         </form>
         <form className="w-1/3 border-2 border-neutral-400 rounded-md px-6 py-8 flex flex-col items-center">
           <h2 className="font-medium text-xl">Cart Total</h2>
-          <CartSummaryContent title="Subtotal" price={1750} underline />
-          <CartSummaryContent title="Shipping" price={0} underline />
-          <CartSummaryContent title="Total" price={1750} />
+          <CartSummaryList
+            items={[
+              { title: "Subtotal", amount: 1750 },
+              { title: "Shipping", amount: 0 },
+            ]}
+          />
           <Button type="submit">Proceed to checkout</Button>
         </form>
       </div>
