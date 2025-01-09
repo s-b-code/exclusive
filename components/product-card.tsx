@@ -1,5 +1,7 @@
+"use client";
+
 import { HexColor, Product } from "@/types";
-import React from "react";
+import React, { ReactNode } from "react";
 import { AspectRatio } from "./ui/aspect-ratio";
 import Image from "next/image";
 import { Button } from "./ui/button";
@@ -14,9 +16,13 @@ interface ProductCardProps extends Product {
   isNew?: boolean;
   selectedColor?: HexColor;
   className?: ClassNameValue;
-  onAddToCart: () => void;
-  onAddToFavorite: () => void;
-  onView: () => void;
+  onAddToCart?: () => void;
+  enableView?: boolean;
+  onView?: () => void;
+  enableDelete?: boolean;
+  onDelete?: () => void;
+  enableAddToWhishList?: boolean;
+  onAddToWhishList?: () => void;
 }
 const ProductCard = ({
   image,
@@ -28,8 +34,12 @@ const ProductCard = ({
   discountedPrice,
   showDiscountPercentage,
   onAddToCart,
-  onAddToFavorite,
+  enableView,
   onView,
+  enableDelete,
+  onDelete,
+  enableAddToWhishList,
+  onAddToWhishList,
 }: ProductCardProps) => {
   const discountPercent = Math.round(
     ((price - (discountedPrice || 1)) / price) * 100
@@ -63,37 +73,56 @@ const ProductCard = ({
               )}
             </div>
             <div className="flex flex-col space-y-2">
-              <Button
-                variant={"outline"}
-                size={"icon"}
-                className="border-none rounded-full"
-                onClick={() => onAddToFavorite()}
-              >
-                <Image
-                  src={"/icons/heart-black.svg"}
-                  height={24}
-                  width={24}
-                  alt="favorite icon"
-                />
-              </Button>
-              <Button
-                variant={"outline"}
-                size={"icon"}
-                className="border-none rounded-full"
-                onClick={() => onView()}
-              >
-                <Image
-                  src={"/icons/eye-black.svg"}
-                  height={24}
-                  width={24}
-                  alt="view icon"
-                />
-              </Button>
+              {enableAddToWhishList && (
+                <Button
+                  variant={"outline"}
+                  size={"icon"}
+                  className="border-none rounded-full"
+                  onClick={() => onAddToWhishList?.()}
+                >
+                  <Image
+                    src={"/icons/heart-black.svg"}
+                    height={24}
+                    width={24}
+                    alt="favorite icon"
+                  />
+                </Button>
+              )}
+              {enableView && (
+                <Button
+                  variant={"outline"}
+                  size={"icon"}
+                  className="border-none rounded-full"
+                  onClick={() => onView?.()}
+                >
+                  <Image
+                    src={"/icons/eye-black.svg"}
+                    height={24}
+                    width={24}
+                    alt="view icon"
+                  />
+                </Button>
+              )}
+              {enableDelete && (
+                <Button
+                  variant={"outline"}
+                  size={"icon"}
+                  className="border-none rounded-full"
+                  onClick={() => onDelete?.()}
+                >
+                  <Image
+                    src={"/icons/delete-black.svg"}
+                    height={24}
+                    width={24}
+                    alt="delete icon"
+                  />
+                </Button>
+              )}
             </div>
           </div>
           <button
             className="bg-button w-full text-white font-medium text-xs lg:text-lg transition-all ease-in-out duration-500 h-8 translate-y-10 group-hover:translate-y-0 flex items-center justify-center overflow-hidden"
-            onClick={() => onAddToCart()}
+            onClick={() => onAddToCart?.()}
           >
             Cart
           </button>
