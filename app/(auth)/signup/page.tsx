@@ -12,7 +12,7 @@ export default function SignupPage() {
         height={781}
         alt="auth screen image"
       />
-      <div>
+      <div className="w-1/4">
         <h1 className="text-3xl font-medium">Create an account</h1>
         <p className="font-normal mt-6">Enter your details below</p>
         <form className="mt-12 flex flex-col space-y-10">
