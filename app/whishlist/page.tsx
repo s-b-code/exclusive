@@ -17,8 +17,8 @@ export default function WhishListPage() {
   }
 
   return (
-    <div className="pt-20 pb-36 flex flex-col space-y-20 w-full items-center">
-      <section id="whishlist" className="container flex flex-col ">
+    <div className="page-container space-y-20">
+      <section id="whishlist" className="flex flex-col ">
         <div className="flex justify-between w-full items-center">
           <h1 className="text-xl">Whishlist ({whishListProducts.length})</h1>
           <Button variant={"outline"}>Move All To Bag</Button>

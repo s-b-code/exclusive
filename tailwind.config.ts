@@ -8,6 +8,9 @@ const customUtilities = plugin(function ({ addUtilities }: PluginAPI) {
     ".section-heading": {
       "@apply text-2xl lg:text-4xl font-semibold tracking-wider": {},
     },
+    ".page-container": {
+      "@apply container mr-0 pt-20 pb-36 flex flex-col": {},
+    },
   };
 
   addUtilities(newUtilities);
