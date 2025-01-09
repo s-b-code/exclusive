@@ -70,9 +70,11 @@ const FlashSalesSection = () => {
                   onAddToCart={() => {
                     console.log("Add to cart", id);
                   }}
-                  onAddToFavorite={() => {
+                  enableAddToWhishList
+                  onAddToWhishList={() => {
                     console.log("Add to favorite", id);
                   }}
+                  enableView
                   onView={() => {
                     console.log("View product", id);
                   }}

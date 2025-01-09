@@ -4,7 +4,6 @@ import { carouselCategories } from "@/static-data";
 import SectionIntroHeader from "./section-intro-header";
 import { Button } from "@/components/ui/button";
 import { ArrowIcon } from "@/icons";
-import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import {
