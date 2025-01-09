@@ -1,15 +1,23 @@
+import { cn } from "@/lib/utils";
 import React from "react";
+import { ClassNameValue } from "tailwind-merge";
 
 interface CartSummaryListProps {
   items: {
     title: string;
     amount: number;
   }[];
+  className?: ClassNameValue;
 }
-const CartSummaryList = ({ items }: CartSummaryListProps) => {
+const CartSummaryList = ({ items, className }: CartSummaryListProps) => {
   const calculatedTotal = items.reduce((acc, item) => acc + item.amount, 0);
   return (
-    <ul className="flex flex-col [&>li]:py-4 [&_li:last-child]:border-0 w-full">
+    <ul
+      className={cn(
+        "flex flex-col [&>li]:py-4 [&_li:last-child]:border-0 w-full",
+        className
+      )}
+    >
       {items.map((item) => {
         const displayPrice = item.amount !== 0 ? item.amount : "Free";
         return (
