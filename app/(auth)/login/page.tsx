@@ -12,14 +12,14 @@ export default function LoginPage() {
         height={781}
         alt="auth screen image"
       />
-      <div>
+      <div className="w-1/4">
         <h1 className="text-3xl font-medium">Log in to Exclusive</h1>
         <p className="font-normal mt-6">Enter your details below</p>
         <form className="mt-12 flex flex-col space-y-10">
           <Input variant={"material"} placeholder="Email or Phone Number" />
           <Input variant={"material"} placeholder="Password" />
 
-          <div className="flex space-x-20 items-center">
+          <div className="flex justify-between items-center w-full">
             <Button size={"none"} type="submit" className="py-4 px-12">
               Login
             </Button>
