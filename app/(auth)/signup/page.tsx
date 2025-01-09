@@ -21,14 +21,8 @@ export default function SignupPage() {
           <Input variant={"material"} placeholder="Password" />
 
           <div className="flex flex-col space-y-4">
-            <Button size={"none"} type="submit" className="py-4 px-32">
-              Create Account
-            </Button>
-            <Button
-              variant={"outline"}
-              size={"none"}
-              className="flex border-text1 py-4 px-24"
-            >
+            <Button type="submit">Create Account</Button>
+            <Button variant={"outline"} className="flex">
               <Image
                 src={"/icons/google-auth-icon.svg"}
                 width={24}

@@ -2,7 +2,7 @@
 
 import SectionIntroHeader from "./section-intro-header";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import ProductCard from "@/components/product-card";
 import { flashSalesProducts } from "@/static-data";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const ExploreProductsSection = () => {
       <div className="flex items-center justify-center">
         <Link
           href={"/products"}
-          className="bg-secondary2 text-text py-4 px-12 rounded-md"
+          className={buttonVariants({ variant: "default", size: "default" })}
         >
           View all products
         </Link>

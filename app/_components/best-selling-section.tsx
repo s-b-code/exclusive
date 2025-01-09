@@ -4,6 +4,7 @@ import Link from "next/link";
 import SectionIntroHeader from "./section-intro-header";
 import { flashSalesProducts } from "@/static-data";
 import ProductCard from "@/components/product-card";
+import { buttonVariants } from "@/components/ui/button";
 
 const BestSellingSection = () => {
   return (
@@ -16,7 +17,7 @@ const BestSellingSection = () => {
         <h1 className="section-heading">Best selling products</h1>
         <Link
           href={`/products?filter=best-selling`}
-          className="bg-secondary2 text-text py-4 px-12 rounded-md"
+          className={buttonVariants({ variant: "default", size: "default" })}
         >
           View all
         </Link>

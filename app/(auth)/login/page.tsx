@@ -20,9 +20,7 @@ export default function LoginPage() {
           <Input variant={"material"} placeholder="Password" />
 
           <div className="flex justify-between items-center w-full">
-            <Button size={"none"} type="submit" className="py-4 px-12">
-              Login
-            </Button>
+            <Button type="submit">Login</Button>
             <Link
               href="/forgot-password"
               className="text-secondary2 space-x-20"

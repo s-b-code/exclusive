@@ -21,13 +21,7 @@ export default function WhishListPage() {
       <section id="whishlist" className="container flex flex-col ">
         <div className="flex justify-between w-full items-center">
           <h1 className="text-xl">Whishlist ({whishListProducts.length})</h1>
-          <Button
-            variant={"outline"}
-            size={"none"}
-            className="border-text1 py-4 px-12 font-medium text-lg"
-          >
-            Move All To Bag
-          </Button>
+          <Button variant={"outline"}>Move All To Bag</Button>
         </div>
         <div className="flex space-x-8 mt-14">
           {whishListProducts.map((product) => (
@@ -47,13 +41,7 @@ export default function WhishListPage() {
             <div className="w-5 h-10 rounded-md bg-secondary2" />
             <h1 className="text-xl">Just for you</h1>
           </div>
-          <Button
-            variant={"outline"}
-            size={"none"}
-            className="border-text1 py-4 px-12 font-medium text-lg"
-          >
-            See all
-          </Button>
+          <Button variant={"outline"}>See all</Button>
         </div>
         <div className="flex space-x-8 mt-14">
           {whishListProducts.map((product) => (
