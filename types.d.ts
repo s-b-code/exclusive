@@ -12,6 +12,10 @@ export type Product = {
   availableColors?: HexColor[];
 };
 
+export type CartItem = Product & {
+  quantity: number;
+};
+
 export type Category = {
   id: number;
   name: string;
