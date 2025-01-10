@@ -87,8 +87,8 @@ const FormItem = React.forwardRef<
           "transition-all ease-in-out duration-500",
           "space-y-2",
           className,
-          "[&>input]:border-none [&>input]:bg-neutral-50",
-          error && "[&>input]:bg-error-50"
+          "[&>input]:border-none [&>input]:bg-neutral-50 [&>textarea]:border-none [&>textarea]:bg-neutral-50",
+          error && "[&>input]:bg-error-50 [&>textarea]:bg-error-50"
         )}
         {...props}
       />
