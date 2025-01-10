@@ -126,6 +126,7 @@ export default {
           800: "#9F1239",
           900: "#881337",
         },
+        transparent: "#11ffee00",
         secondary: "#F5F5F5",
         secondary1: "#FEFAF1",
         secondary2: "#DB4444",

@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} antialiased flex flex-col items-center relative`}
+        className={`${poppins.variable} antialiased flex flex-col min-h-screen items-center relative`}
       >
         <div className="bg-button w-full py-3 text-text flex max-lg:flex-col  items-center justify-center max-lg:text-sm max-lg:overflow-hidden">
           <div className="container flex-1 flex justify-center space-x-2">
@@ -77,8 +77,10 @@ export default function RootLayout({
           </div>
           <Separator orientation="horizontal" className="bg-neutral-100" />
         </header>
-        <main className="w-full flex flex-col items-center">{children}</main>
-        <footer className="w-full bg-button text-white flex justify-center">
+        <main className="flex-grow w-full flex flex-col items-center">
+          {children}
+        </main>
+        <footer className="w-full bg-button text-white flex justify-center mb-auto">
           <Footer />
         </footer>
       </body>
