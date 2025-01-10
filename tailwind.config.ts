@@ -11,6 +11,12 @@ const customUtilities = plugin(function ({ addUtilities }: PluginAPI) {
     ".page-container": {
       "@apply container mr-0 pt-20 pb-36 flex flex-col": {},
     },
+    ".page-view": {
+      "@apply pt-20 pb-36 flex flex-col w-full": {},
+    },
+    ".enable-animation": {
+      "@apply transition-all ease-in-out duration-500": {},
+    },
   };
 
   addUtilities(newUtilities);

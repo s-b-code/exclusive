@@ -1,6 +1,6 @@
 "use client";
+
 import DotButton from "@/components/dot-button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Carousel,
   CarouselApi,
@@ -8,15 +8,12 @@ import {
   CarouselItem,
   EmblaCarouselType,
 } from "@/components/ui/carousel";
-import { flashDeals } from "@/static-data";
-import Autoplay from "embla-carousel-autoplay";
-import Fade from "embla-carousel-fade";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { teamMembers } from "@/static-data";
+import React, { useEffect, useState } from "react";
+import TeamMemberCard from "./team-member-card";
 
-const FlashDealsCarousel = () => {
+const TeamMembersCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
-  const [isAutoPlayActive, setIsAutoPlayActive] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
@@ -47,34 +44,23 @@ const FlashDealsCarousel = () => {
   }, [api]);
 
   return (
-    <div className="relative h-full">
+    <div className="h-full w-1/2">
       <Carousel
-        onMouseEnter={() => setIsAutoPlayActive(false)}
-        onMouseLeave={() => setIsAutoPlayActive(true)}
-        className="w-full absolute"
+        className="w-full"
         setApi={setApi}
-        opts={{ loop: true, duration: 1000 }}
-        plugins={[
-          Fade({ active: isAutoPlayActive }),
-          Autoplay({ playOnInit: true, active: isAutoPlayActive }),
-        ]}
+        opts={{
+          slidesToScroll: "auto",
+        }}
       >
         <CarouselContent>
-          {flashDeals.map((deal, index) => (
-            <CarouselItem key={index} className="overflow-hidden">
-              <AspectRatio ratio={16 / 4.6} className="bg-muted">
-                <Image
-                  src={deal}
-                  alt="Photo by Drew Beamer"
-                  fill
-                  className="h-full w-full object-cover"
-                />
-              </AspectRatio>
+          {teamMembers.map((member) => (
+            <CarouselItem key={member.id} className="basis-1/3">
+              <TeamMemberCard {...member} />
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="absolute bottom-4 w-full flex items-center justify-center space-x-3">
+      <div className="w-full flex items-center justify-center space-x-3 mt-10">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
@@ -87,4 +73,4 @@ const FlashDealsCarousel = () => {
   );
 };
 
-export default FlashDealsCarousel;
+export default TeamMembersCarousel;

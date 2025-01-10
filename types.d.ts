@@ -1,6 +1,6 @@
 type HexColor = `#${string}`;
 
-type URLString = `${"http" | "https"}://${string}`;
+type URLString = `${"http" | "https"}://${string}` | "#";
 
 export type Product = {
   id: number;
@@ -10,6 +10,16 @@ export type Product = {
   rating: number;
   reviewsCount: number;
   availableColors?: HexColor[];
+};
+
+export type TeamMember = {
+  id: number;
+  image: URLString;
+  name: string;
+  designation: string;
+  twitterLink: URLString;
+  instagramLink: URLString;
+  linkedInLink: URLString;
 };
 
 export type CartItem = Product & {

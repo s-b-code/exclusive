@@ -1,4 +1,4 @@
-import { CartItem, Category, FlashSalesProduct } from "./types";
+import { CartItem, Category, FlashSalesProduct, TeamMember } from "./types";
 
 export const languages = ["English", "Hindi", "Bengali"];
 export const categories = [
@@ -125,5 +125,52 @@ export const cartItems: CartItem[] = [
     quantity: 5,
     rating: 4.3,
     reviewsCount: 99,
+  },
+];
+export const teamMembers: TeamMember[] = [
+  {
+    id: 1,
+    image: "https://placehold.co/430x370/png",
+    name: "John doe",
+    designation: "Founder & Chairman",
+    linkedInLink: "#",
+    instagramLink: "#",
+    twitterLink: "#",
+  },
+  {
+    id: 2,
+    image: "https://placehold.co/430x370/png",
+    name: "Harry potter",
+    designation: "Managing director",
+    linkedInLink: "#",
+    instagramLink: "#",
+    twitterLink: "#",
+  },
+  {
+    id: 3,
+    image: "https://placehold.co/430x370/png",
+    name: "Harry potter",
+    designation: "Managing director",
+    linkedInLink: "#",
+    instagramLink: "#",
+    twitterLink: "#",
+  },
+  {
+    id: 4,
+    image: "https://placehold.co/430x370/png",
+    name: "Armstrong harry",
+    designation: "Sale directive",
+    linkedInLink: "#",
+    instagramLink: "#",
+    twitterLink: "#",
+  },
+  {
+    id: 5,
+    image: "https://placehold.co/430x370/png",
+    name: "Tin tin",
+    designation: "Product manager",
+    linkedInLink: "#",
+    instagramLink: "#",
+    twitterLink: "#",
   },
 ];
