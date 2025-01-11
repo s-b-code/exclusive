@@ -1,6 +1,6 @@
 import LanguageSelector from "./_components/language-selector";
 import Image from "next/image";
-import SearchForm from "./_components/search-form";
+import SearchForm from "@/components/search-form";
 import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/footer";
 
