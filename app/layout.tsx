@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "An ecommerce app",
 };
 
+export const runtime = "edge";
+
 export default function RootLayout({
   children,
 }: Readonly<{
