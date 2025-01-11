@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import SectionIntroHeader from "./section-intro-header";
+import SectionIntroHeader from "@/components/section-intro-header";
 
 const NewArrivalSection = () => {
   return (

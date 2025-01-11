@@ -6,9 +6,9 @@ import { AspectRatio } from "./ui/aspect-ratio";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
-import { StarIcon } from "@/icons";
 import { ClassNameValue } from "tailwind-merge";
 import { cn } from "@/lib/utils";
+import StarRating from "./star-rating";
 
 interface ProductCardProps extends Product {
   discountedPrice?: number;
@@ -44,21 +44,6 @@ const ProductCard = ({
   const discountPercent = Math.round(
     ((price - (discountedPrice || 1)) / price) * 100
   );
-
-  const StarRating = ({ rating }: { rating: number }) => {
-    const maxStars = 5;
-    const starArray = Array.from({ length: maxStars }, (_, i) => i + 1);
-
-    return (
-      <>
-        {starArray.map((_, index) => {
-          const fillPercentage = Math.max(0, Math.min(1, rating - index)) * 100;
-
-          return <StarIcon key={index} percentage={fillPercentage} />;
-        })}
-      </>
-    );
-  };
 
   return (
     <div className={cn("flex flex-col group", className)}>

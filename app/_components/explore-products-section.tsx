@@ -1,6 +1,6 @@
 "use client";
 
-import SectionIntroHeader from "./section-intro-header";
+import SectionIntroHeader from "../../components/section-intro-header";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import ProductCard from "@/components/product-card";
