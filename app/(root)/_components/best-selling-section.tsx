@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import SectionIntroHeader from "../../components/section-intro-header";
+import SectionIntroHeader from "../../../components/section-intro-header";
 import { flashSalesProducts } from "@/static-data";
 import ProductCard from "@/components/product-card";
 import { buttonVariants } from "@/components/ui/button";

@@ -1,7 +1,7 @@
 "use client";
 
 import { carouselCategories } from "@/static-data";
-import SectionIntroHeader from "../../components/section-intro-header";
+import SectionIntroHeader from "../../../components/section-intro-header";
 import { Button } from "@/components/ui/button";
 import { ArrowIcon } from "@/icons";
 import { Separator } from "@/components/ui/separator";
