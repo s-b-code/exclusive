@@ -4,7 +4,7 @@ import SearchForm from "./_components/search-form";
 import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/footer";
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
