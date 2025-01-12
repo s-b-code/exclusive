@@ -29,7 +29,14 @@ export default function Layout({
         <Sidebar className="border border-r-neutral-100 border-t-transparent">
           <SidebarHeader />
           <SidebarContent className="">
-            <NavigationMenu className=" w-full mt-24">
+            <Image
+              src="/logo.svg"
+              width={118}
+              height={24}
+              alt="logo"
+              className="mt-5 mx-auto"
+            />
+            <NavigationMenu className=" w-full mt-8">
               <NavigationMenuList className="flex flex-col px-6 space-y-5 ">
                 <NavigationMenuItem
                   className={cn(buttonVariants({ size: "sm" }), "w-full")}
