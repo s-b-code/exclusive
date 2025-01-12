@@ -1,5 +1,5 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { TeamMember } from "@/types";
+import { TeamMember } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

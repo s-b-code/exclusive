@@ -1,4 +1,9 @@
-import { CartItem, Category, FlashSalesProduct, TeamMember } from "./types";
+import {
+  CartItem,
+  Category,
+  FlashSalesProduct,
+  TeamMember,
+} from "./types/types";
 
 export const languages = ["English", "Hindi", "Bengali"];
 export const categories = [

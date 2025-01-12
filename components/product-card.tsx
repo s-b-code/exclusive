@@ -1,6 +1,6 @@
 "use client";
 
-import { HexColor, Product } from "@/types";
+import { HexColor, Product } from "@/types/types";
 import React from "react";
 import { AspectRatio } from "./ui/aspect-ratio";
 import Image from "next/image";

@@ -32,6 +32,6 @@ export type Category = {
   icon: string; //TODO: Replace this with URLString as this will be fetched from database
 };
 
-export interface FlashSalesProduct extends Product {
+export type FlashSalesProduct = Product & {
   discountPrice: number;
-}
+};

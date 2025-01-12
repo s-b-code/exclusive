@@ -1,16 +1,22 @@
 import SearchForm from "@/components/search-form";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
   SidebarHeader,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Layout({
   children,
@@ -22,9 +28,38 @@ export default function Layout({
       <SidebarProvider>
         <Sidebar className="border border-r-neutral-100 border-t-transparent">
           <SidebarHeader />
-          <SidebarContent>
-            <SidebarGroup />
-            <SidebarGroup />
+          <SidebarContent className="">
+            <NavigationMenu className=" w-full mt-24">
+              <NavigationMenuList className="flex flex-col px-6 space-y-5 ">
+                <NavigationMenuItem
+                  className={cn(buttonVariants({ size: "sm" }), "w-full")}
+                >
+                  <Link href="/cms" legacyBehavior passHref>
+                    DASHBOARD
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem
+                  className={cn(
+                    buttonVariants({ size: "sm", variant: "ghost" }),
+                    "w-full"
+                  )}
+                >
+                  <Link href="/cms/all-products" legacyBehavior passHref>
+                    ALL PRODUCTS
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem
+                  className={cn(
+                    buttonVariants({ size: "sm", variant: "ghost" }),
+                    "w-full"
+                  )}
+                >
+                  <Link href="/cms/orders" legacyBehavior passHref>
+                    ORDERS
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </SidebarContent>
           <SidebarFooter />
         </Sidebar>
@@ -51,7 +86,7 @@ export default function Layout({
             </div>
             <Separator orientation="horizontal" className="bg-neutral-100" />
           </header>
-          <main>{children}</main>
+          <main className="w-full">{children}</main>
         </div>
       </SidebarProvider>
       <footer className="w-full bg-button text-white flex justify-center z-50">
